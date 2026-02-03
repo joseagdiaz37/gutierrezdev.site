@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 10% 10%;
+    --foreground: 0 0% 95%;
+    --card: 220 10% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 10% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 280 60% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 10% 18%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 10% 20%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 280 60% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 280 60% 60%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Poppins', sans-serif;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="%2322d3ee" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="2" fill="%2322d3ee"/></svg>') 12 12, auto;
+  }
+
+  a, button {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="%2322d3ee" stroke-width="2.5" fill="none"/><circle cx="12" cy="12" r="3" fill="%2322d3ee"/></svg>') 12 12, pointer;
+  }
+}
+
+.font-mono {
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #191a1c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Logo marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Gradient backgrounds for testimonials */
+.bg-gradient-turquoise {
+  background: linear-gradient(135deg, #0f766e 0%, #0891b2 100%);
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+}
+
+.bg-gradient-purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+}
+
+/* Code tag styling */
+.code-tag {
+  font-family: 'Roboto Mono', monospace;
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+/* Underline animation */
+.underline-animation {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #a855f7, #06b6d4);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+/* Floating animation for 3D element */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(10deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Project card hover effect */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Button gradient */
+.btn-gradient {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%);
+  transform: translateY(-2px);
+}
+
+/* Scroll down indicator */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Phone rotation animation */
+@keyframes phoneRotate {
+  0%, 100% {
+    transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(15deg) rotateX(-5deg);
+  }
+}
+
+.animate-phone-rotate {
+  animation: phoneRotate 8s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
