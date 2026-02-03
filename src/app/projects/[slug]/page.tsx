@@ -117,10 +117,10 @@ export default function ProjectPage() {
             href="/" 
             className="text-2xl font-bold text-cyan-400 font-mono"
           >
-            JoséGutiérrez._
+            JoseGutierrez._
           </Link>
           
-          {/* Menu items */}
+     
           <div className="hidden md:flex items-center gap-8 text-sm font-mono">
             <Link href="/#hero-section" className="text-gray-400 hover:text-white transition-colors">
               <span className="text-gray-600">01</span> // home
