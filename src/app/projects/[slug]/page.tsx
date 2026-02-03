@@ -123,19 +123,19 @@ export default function ProjectPage() {
      
           <div className="hidden md:flex items-center gap-8 text-sm font-mono">
             <Link href="/#hero-section" className="text-gray-400 hover:text-white transition-colors">
-              <span className="text-gray-600">01</span> // home
+              <span className="text-gray-600">01</span> {/* home */}
             </Link>
             <Link href="/#expertise" className="text-gray-400 hover:text-white transition-colors">
-              <span className="text-gray-600">02</span> // expertise
+              <span className="text-gray-600">02</span> {/* expertise */}
             </Link>
             <Link href="/#work" className="text-gray-400 hover:text-white transition-colors">
-              <span className="text-gray-600">03</span> // work
+              <span className="text-gray-600">03</span> {/* work */}
             </Link>
             <Link href="/#experience" className="text-gray-400 hover:text-white transition-colors">
-              <span className="text-gray-600">04</span> // experience
+              <span className="text-gray-600">04</span> {/* experience */}
             </Link>
             <Link href="/#contact" className="text-gray-400 hover:text-white transition-colors">
-              <span className="text-gray-600">05</span> // contact
+              <span className="text-gray-600">05</span> {/* contact */}
             </Link>
           </div>
         </div>
