@@ -13,6 +13,22 @@ const technologies = [
   { name: "Google Analytics", logo: "https://www.svgrepo.com/show/475656/google-color.svg" },
 ];
 
+// Partículas de código para el fondo
+const codeParticles = [
+  { symbol: "{", x: "10%", y: "20%", delay: "0s", duration: "20s", color: "text-purple-500/30" },
+  { symbol: "}", x: "85%", y: "15%", delay: "2s", duration: "22s", color: "text-cyan-500/30" },
+  { symbol: "</>", x: "15%", y: "70%", delay: "1s", duration: "25s", color: "text-orange-500/30" },
+  { symbol: "()", x: "75%", y: "65%", delay: "3s", duration: "18s", color: "text-pink-500/30" },
+  { symbol: "[]", x: "50%", y: "80%", delay: "1.5s", duration: "23s", color: "text-blue-500/30" },
+  { symbol: "//", x: "30%", y: "40%", delay: "4s", duration: "19s", color: "text-green-500/30" },
+  { symbol: ";", x: "60%", y: "30%", delay: "2.5s", duration: "21s", color: "text-yellow-500/30" },
+  { symbol: "=>", x: "20%", y: "55%", delay: "0.5s", duration: "24s", color: "text-indigo-500/30" },
+  { symbol: "!=", x: "70%", y: "45%", delay: "3.5s", duration: "20s", color: "text-red-500/30" },
+  { symbol: "&&", x: "40%", y: "25%", delay: "1s", duration: "22s", color: "text-teal-500/30" },
+  { symbol: "||", x: "55%", y: "60%", delay: "2s", duration: "19s", color: "text-purple-400/30" },
+  { symbol: "===", x: "25%", y: "85%", delay: "4s", duration: "23s", color: "text-cyan-400/30" },
+];
+
 export default function HeroSection() {
   return (
     <section
@@ -22,79 +38,23 @@ export default function HeroSection() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#191a1c] via-[#191a1c] to-[#1a1b1d]" />
 
-      {/* 3D Geometric Shape - Code Brackets */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
-        <div className="animate-float relative">
-          {/* Code brackets { } */}
-          <div className="relative w-64 h-64 md:w-96 md:h-96 flex items-center justify-center gap-8">
-            {/* Left bracket { */}
-            <div className="relative w-16 md:w-20 h-48 md:h-64">
-              {/* Top part */}
-              <div
-                className="absolute top-0 right-0 w-12 md:w-16 h-16 md:h-20 rounded-tr-3xl border-r-8 border-t-8 border-purple-500/60"
-                style={{
-                  transform: "perspective(800px) rotateY(-25deg) rotateX(5deg)",
-                  boxShadow: "8px -8px 30px rgba(168, 85, 247, 0.3)",
-                }}
-              />
-              {/* Middle curve */}
-              <div
-                className="absolute top-1/2 -translate-y-1/2 left-0 w-8 md:w-10 h-12 md:h-16 rounded-l-2xl border-l-8 border-purple-400/70"
-                style={{
-                  transform: "perspective(800px) rotateY(-25deg)",
-                  boxShadow: "-6px 0 20px rgba(168, 85, 247, 0.25)",
-                }}
-              />
-              {/* Bottom part */}
-              <div
-                className="absolute bottom-0 right-0 w-12 md:w-16 h-16 md:h-20 rounded-br-3xl border-r-8 border-b-8 border-purple-500/60"
-                style={{
-                  transform: "perspective(800px) rotateY(-25deg) rotateX(-5deg)",
-                  boxShadow: "8px 8px 30px rgba(168, 85, 247, 0.3)",
-                }}
-              />
-            </div>
-
-            {/* Right bracket } */}
-            <div className="relative w-16 md:w-20 h-48 md:h-64">
-              {/* Top part */}
-              <div
-                className="absolute top-0 left-0 w-12 md:w-16 h-16 md:h-20 rounded-tl-3xl border-l-8 border-t-8 border-cyan-500/60"
-                style={{
-                  transform: "perspective(800px) rotateY(25deg) rotateX(5deg)",
-                  boxShadow: "-8px -8px 30px rgba(34, 211, 238, 0.3)",
-                }}
-              />
-              {/* Middle curve */}
-              <div
-                className="absolute top-1/2 -translate-y-1/2 right-0 w-8 md:w-10 h-12 md:h-16 rounded-r-2xl border-r-8 border-cyan-400/70"
-                style={{
-                  transform: "perspective(800px) rotateY(25deg)",
-                  boxShadow: "6px 0 20px rgba(34, 211, 238, 0.25)",
-                }}
-              />
-              {/* Bottom part */}
-              <div
-                className="absolute bottom-0 left-0 w-12 md:w-16 h-16 md:h-20 rounded-bl-3xl border-l-8 border-b-8 border-cyan-500/60"
-                style={{
-                  transform: "perspective(800px) rotateY(25deg) rotateX(-5deg)",
-                  boxShadow: "-8px 8px 30px rgba(34, 211, 238, 0.3)",
-                }}
-              />
-            </div>
-
-            {/* Code symbol </> in the center */}
-            <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl md:text-7xl font-bold text-orange-500/40"
-              style={{
-                textShadow: "0 0 30px rgba(249, 115, 22, 0.5)",
-                fontFamily: "monospace",
-              }}
-            >
-              &lt;/&gt;
-            </div>
+      {/* Partículas de código flotantes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {codeParticles.map((particle, index) => (
+          <div
+            key={index}
+            className={`absolute font-mono text-4xl md:text-6xl font-bold ${particle.color} animate-float-code`}
+            style={{
+              left: particle.x,
+              top: particle.y,
+              animationDelay: particle.delay,
+              animationDuration: particle.duration,
+              textShadow: "0 0 20px currentColor",
+            }}
+          >
+            {particle.symbol}
           </div>
-        </div>
+        ))}
       </div>
 
       {/* Main content */}
