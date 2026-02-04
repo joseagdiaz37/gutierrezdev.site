@@ -10,7 +10,7 @@ const projects = [
     category: "Web Development",
     categorySlug: "web-dev",
     slug: "global-connection",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    image: "public/projects/mkgc.png",
     size: "third",
   },
   {
