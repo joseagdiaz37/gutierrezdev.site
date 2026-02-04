@@ -101,7 +101,7 @@ export default function WorkSection() {
   return (
     <section id="work" className="py-24 md:py-32 bg-[#191a1c]">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 mb-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 mb-32 lg:mb-16 items-center">
           {/* Left column - Title and description */}
           <div>
             <h2 className="text-6xl md:text-7xl font-bold text-white mb-8 leading-tight">
@@ -178,13 +178,13 @@ export default function WorkSection() {
         </div>
 
         {/* Projects grid - Custom layout: 1/3 1/3 1/3, 2/3 1/3, 1/3 1/3 1/3 */}
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.slice(0, 9).map((project) => (
             <Link
               key={project.id}
               href={`/projects/${project.slug}`}
               className={`project-card group cursor-pointer overflow-hidden bg-[#0f0f0f] rounded-2xl block hover:transform hover:scale-[1.02] transition-all duration-300 ${
-                project.size === 'two-thirds' ? 'col-span-2' : 'col-span-1'
+                project.size === 'two-thirds' ? 'md:col-span-2 lg:col-span-2' : 'col-span-1'
               }`}
             >
               <div className="h-64 overflow-hidden bg-gradient-to-br from-gray-900 to-black p-8 flex items-center justify-center">
