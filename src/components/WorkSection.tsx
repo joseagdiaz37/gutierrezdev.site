@@ -19,7 +19,7 @@ const projects = [
     category: "Web Development",
     categorySlug: "web-dev",
     slug: "estudie-en-el-exterior",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop",
+    image: "/projects/mkeeee.png",
     size: "third",
   },
   {
@@ -62,7 +62,7 @@ const projects = [
   },
   {
     id: 7,
-    title: "Clínica Pie de Cuesta",
+    title: "Clínica Piedecuesta",
     category: "Web Development",
     categorySlug: "web-dev",
     slug: "clinica-piedecuesta",

@@ -27,8 +27,9 @@ const projectsData: Record<string, {
     description: "Educational platform website for study abroad programs. Features include course listings, application management, student portal, and multilingual support.",
     category: "Web Development",
     technologies: ["WordPress", "PHP", "JavaScript", "MySQL"],
-    mockupImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1400&h=900&fit=crop",
-    websiteImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1400&h=900&fit=crop",
+    mockupImage: "/projects/mkeeee.png",
+    websiteImage: "/projects/sseee.png",
+    projectUrl: "https://estudieenelexterior.com.co/",
   },
   "nova-expense-app": {
     title: "Nova Expense App",
@@ -63,7 +64,7 @@ const projectsData: Record<string, {
     websiteImage: "https://images.unsplash.com/photo-1557821552-17105176677c?w=1400&h=900&fit=crop",
   },
   "clinica-piedecuesta": {
-    title: "Clínica Pie de Cuesta",
+    title: "Clínica Piedecuesta",
     description: "Medical clinic website with appointment booking, service information, doctor profiles, and patient portal. HIPAA compliant and secure.",
     category: "Web Development",
     technologies: ["WordPress", "PHP", "MySQL", "Booking System"],
