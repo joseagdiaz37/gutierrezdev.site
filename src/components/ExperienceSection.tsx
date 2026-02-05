@@ -6,8 +6,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const experiences = [
+const experiencesEn = [
   {
     id: "1",
     title: "Web Administrator and Systems Support",
@@ -54,14 +55,64 @@ const experiences = [
   },
 ];
 
+const experiencesEs = [
+  {
+    id: "1",
+    title: "Administrador web y soporte de sistemas",
+    company: "Asfalart",
+    period: "2015 - 2017",
+    location: "Bucaramanga - Colombia",
+    website: "www.asfalart.co",
+    description:
+      "Estuve a cargo de la administración del sitio web y áreas del departamento de sistemas como gestión de software y CRM.",
+    skills: ["Administración web", "CRM", "Soporte de sistemas"],
+  },
+  {
+    id: "2",
+    title: "Administrador web, diseñador y creativo audiovisual",
+    company: "Valdivision",
+    period: "2017 - 2018",
+    location: "Bucaramanga - Colombia",
+    website: "valdivision.com",
+    description:
+      "Gestioné y administré el sitio web, diseñé piezas gráficas y edité video y fotografía. También cubrí eventos corporativos privados con foto y video.",
+    skills: ["Diseño web", "Edición de video", "Fotografía", "Eventos corporativos"],
+  },
+  {
+    id: "3",
+    title: "Webmaster - Desarrollador web",
+    company: "Solved Puzzle Agency",
+    period: "2018 - 2022",
+    location: "Miami - USA (Remoto)",
+    website: "solvedpuzzle.com",
+    description:
+      "Desarrollé más de 20 sitios web combinando WordPress y Shopify. Lideré el área de desarrollo, automatizaciones, creación de scripts y gestión de leads.",
+    skills: ["WordPress", "Shopify", "Automatizaciones", "Scripts", "Gestión de leads"],
+  },
+  {
+    id: "4",
+    title: "Webmaster - Desarrollador web - UX/UI Designer",
+    company: "Global Connection",
+    period: "2022 - Presente",
+    location: "Bogotá - Colombia (Híbrido)",
+    website: "globalconnection.com.co",
+    description:
+      "Desarrollo e implementación de soluciones full-stack, integraciones CRM, automatizaciones, campañas en redes y configuraciones con Tag Manager, Search Console y Analytics.",
+    skills: ["Full-Stack", "CRM", "Automatizaciones", "Social Media", "Google Tools", "SEO"],
+  },
+];
+
 export default function ExperienceSection() {
+  const { language } = useLanguage();
+  const experiences = language === "es" ? experiencesEs : experiencesEn;
+
   return (
     <section id="experience" className="py-24 md:py-32 bg-[#191a1c]">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          <span className="text-white">Professional</span>
+          <span className="text-white">{language === "es" ? "Experiencia" : "Professional"}</span>
           <br />
-          <span className="text-cyan-400">Experience</span>
+          <span className="text-cyan-400">{language === "es" ? "Profesional" : "Experience"}</span>
         </h2>
 
         <div className="max-w-3xl mx-auto">

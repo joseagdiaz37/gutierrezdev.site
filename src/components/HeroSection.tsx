@@ -1,5 +1,7 @@
 "use client";
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const technologies = [
   { name: "WordPress", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
   { name: "Shopify", logo: "https://cdn.worldvectorlogo.com/logos/shopify.svg" },
@@ -30,6 +32,9 @@ const codeParticles = [
 ];
 
 export default function HeroSection() {
+  const { language } = useLanguage();
+  const isEs = language === "es";
+
   return (
     <section
       id="hero-section"
@@ -63,14 +68,16 @@ export default function HeroSection() {
           JOSÉ GUTIÉRREZ
         </h1>
         <p className="font-mono text-sm md:text-base text-gray-400 tracking-[0.2em] uppercase">
-          Full-Stack Developer, React & Node.js Specialist.
+          {isEs
+            ? "Desarrollador Full-Stack, especialista en React y Node.js."
+            : "Full-Stack Developer, React & Node.js Specialist."}
         </p>
       </div>
 
       {/* Technologies Section */}
       <div className="relative z-10 mt-20 md:mt-32 w-full">
         <p className="text-center text-gray-500 text-xs tracking-[0.3em] uppercase mb-8 font-mono">
-          Expert In
+          {isEs ? "Experto en" : "Expert In"}
         </p>
 
         {/* Technologies carousel */}

@@ -1,18 +1,29 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
+  const { language } = useLanguage();
 
-  const codeLines = [
-    "import { Developer } from 'jose-gutierrez';",
-    "const skills = ['React', 'PHP', 'WordPress'];",
-    "const projects = await loadProjects();",
-    "console.log('Initializing portfolio...');",
-    "// Loading complete ✓",
-  ];
+  const codeLines =
+    language === "es"
+      ? [
+          "import { Developer } from 'jose-gutierrez';",
+          "const skills = ['React', 'PHP', 'WordPress'];",
+          "const projects = await loadProjects();",
+          "console.log('Inicializando portafolio...');",
+          "// Carga completa ✓",
+        ]
+      : [
+          "import { Developer } from 'jose-gutierrez';",
+          "const skills = ['React', 'PHP', 'WordPress'];",
+          "const projects = await loadProjects();",
+          "console.log('Initializing portfolio...');",
+          "// Loading complete ✓",
+        ];
 
   useEffect(() => {
     // Solo mostrar la animación si es la primera vez
@@ -78,7 +89,7 @@ export default function LoadingScreen() {
             {/* Progress bar */}
             <div className="mt-6">
               <div className="flex justify-between text-xs text-gray-500 mb-2">
-                <span>Loading portfolio...</span>
+                <span>{language === "es" ? "Cargando portafolio..." : "Loading portfolio..."}</span>
                 <span>{progress}%</span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
@@ -102,7 +113,7 @@ export default function LoadingScreen() {
             José<span className="text-cyan-400">Gutiérrez</span>
           </h1>
           <p className="text-gray-500 text-sm mt-2 font-mono">
-            Full-Stack Developer
+            {language === "es" ? "Desarrollador Full-Stack" : "Full-Stack Developer"}
           </p>
         </div>
       </div>

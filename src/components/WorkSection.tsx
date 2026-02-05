@@ -2,12 +2,19 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const categoryLabels = {
+  "web-dev": { en: "Web Development", es: "Desarrollo web" },
+  "mobile-app": { en: "Mobile App", es: "Aplicación móvil" },
+  "web-software": { en: "Web Software", es: "Software web" },
+  automation: { en: "Automation", es: "Automatización" },
+};
 
 const projects = [
   {
     id: 1,
     title: "Global Connection",
-    category: "Web Development",
     categorySlug: "web-dev",
     slug: "global-connection",
     image: "/projects/mkgc.png",
@@ -16,7 +23,6 @@ const projects = [
   {
     id: 2,
     title: "Estudie en el Exterior",
-    category: "Web Development",
     categorySlug: "web-dev",
     slug: "estudie-en-el-exterior",
     image: "/projects/mkeeee.png",
@@ -25,18 +31,19 @@ const projects = [
   {
     id: 3,
     title: "Nova Expense App",
-    category: "Mobile App",
     categorySlug: "mobile-app",
     slug: "nova-expense-app",
-    image: "/images/nova Expense.png",
+    image: "/projects/mkns.png",
     featured: true,
     size: "third",
-    description: "Aplicación móvil para administrar gastos personales y empresariales",
+    description: {
+      en: "Mobile app for managing personal and business expenses",
+      es: "Aplicación móvil para administrar gastos personales y empresariales",
+    },
   },
   {
     id: 4,
     title: "Bitrix24 CRM Automation",
-    category: "Automation",
     categorySlug: "automation",
     slug: "bitrix24-crm-automation",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
@@ -45,51 +52,48 @@ const projects = [
   {
     id: 5,
     title: "Cotizador de Cursos",
-    category: "Web Software",
     categorySlug: "web-software",
     slug: "cotizador-de-cursos",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
+    image: "/projects/mkct.png",
     size: "third",
   },
   {
     id: 6,
     title: "Solved Puzzle",
-    category: "Web Development",
     categorySlug: "web-dev",
     slug: "solved-puzzle",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+    image: "/projects/mksp.png",
     size: "third",
   },
   {
     id: 7,
     title: "Clínica Piedecuesta",
-    category: "Web Development",
     categorySlug: "web-dev",
     slug: "clinica-piedecuesta",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+    image: "/projects/mkcp.png",
     size: "third",
   },
   {
     id: 8,
     title: "Dimark Garage Doors",
-    category: "Web Development",
     categorySlug: "web-dev",
     slug: "dimark-garage-doors",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
+    image: "/projects/mkdg.png",
     size: "third",
   },
 ];
 
 const filters = [
-  { label: "All", slug: "all", count: 8 },
-  { label: "Web Development", slug: "web-dev", count: 4 },
-  { label: "Mobile App", slug: "mobile-app", count: 1 },
-  { label: "Web Software", slug: "web-software", count: 1 },
-  { label: "Automation", slug: "automation", count: 1 },
+  { slug: "all", count: 8, label: { en: "All", es: "Todos" } },
+  { slug: "web-dev", count: 4, label: categoryLabels["web-dev"] },
+  { slug: "mobile-app", count: 1, label: categoryLabels["mobile-app"] },
+  { slug: "web-software", count: 1, label: categoryLabels["web-software"] },
+  { slug: "automation", count: 1, label: categoryLabels.automation },
 ];
 
 export default function WorkSection() {
   const [activeFilter, setActiveFilter] = useState("all");
+  const { language } = useLanguage();
 
   const filteredProjects =
     activeFilter === "all"
@@ -105,12 +109,18 @@ export default function WorkSection() {
           {/* Left column - Title and description */}
           <div>
             <h2 className="text-6xl md:text-7xl font-bold text-white mb-8 leading-tight">
-              My<br />Work
+              {language === "es" ? "Mis" : "My"}
+              <br />
+              {language === "es" ? "Proyectos" : "Work"}
             </h2>
             <p className="font-mono text-gray-400 max-w-md leading-relaxed text-sm md:text-base">
-              Deployed scalable travel, event and telemedicine web and hybrid mobile apps using React SPA and PWA.
+              {language === "es"
+                ? "He desarrollado aplicaciones web y móviles escalables para viajes, eventos y telemedicina usando React SPA y PWA."
+                : "Deployed scalable travel, event and telemedicine web and hybrid mobile apps using React SPA and PWA."}
               <br /><br />
-              Collaborated in 140+ projects with 50+ clients all around the world. I am also interested in data analytics and visualization.
+              {language === "es"
+                ? "He colaborado en 140+ proyectos con 50+ clientes alrededor del mundo. También me interesan los datos y la visualización."
+                : "Collaborated in 140+ projects with 50+ clients all around the world. I am also interested in data analytics and visualization."}
             </p>
           </div>
 
@@ -147,7 +157,7 @@ export default function WorkSection() {
                   href={`/projects/${featuredProject.slug}`}
                   className="inline-block btn-gradient px-6 py-3 rounded-lg font-mono text-sm text-white tracking-wider hover:scale-105 transition-transform"
                 >
-                  View Project
+                  {language === "es" ? "Ver proyecto" : "View Project"}
                 </Link>
               </div>
             </div>
@@ -156,7 +166,7 @@ export default function WorkSection() {
 
         {/* Filter tabs */}
         <div className="flex flex-wrap items-center gap-4 mb-12 text-sm font-mono">
-          <span className="text-gray-500">Filter by</span>
+          <span className="text-gray-500">{language === "es" ? "Filtrar por" : "Filter by"}</span>
           {filters.map((filter, index) => (
             <button
               type="button"
@@ -169,7 +179,7 @@ export default function WorkSection() {
               }`}
             >
               {index > 0 && <span className="text-gray-600 mr-2">/</span>}
-              {filter.label}
+              {filter.label[language]}
               <sup className="text-[10px] ml-0.5 text-gray-500">
                 {String(filter.count).padStart(2, "0")}
               </sup>
@@ -198,7 +208,9 @@ export default function WorkSection() {
                 <h3 className="text-white font-bold text-xl mb-2 group-hover:text-cyan-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-500 text-sm font-mono">{project.category}</p>
+                <p className="text-gray-500 text-sm font-mono">
+                  {categoryLabels[project.categorySlug][language]}
+                </p>
               </div>
             </Link>
           ))}

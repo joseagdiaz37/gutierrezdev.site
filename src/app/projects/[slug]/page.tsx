@@ -12,6 +12,17 @@ const projectsData: Record<string, {
   mockupImage: string;
   websiteImage: string;
   projectUrl?: string;
+  caseStudy?: {
+    subtitle: string;
+    context: string;
+    objective: string;
+    stack: string[];
+    results: string;
+    impact: string;
+    flow: string;
+    highlights: string[];
+    tools?: { name: string; logo: string }[];
+  };
 }> = {
   "global-connection": {
     title: "Global Connection",
@@ -36,48 +47,85 @@ const projectsData: Record<string, {
     description: "Mobile application for managing personal and business expenses. Track spending, categorize expenses, generate reports, and sync across devices.",
     category: "Mobile App",
     technologies: ["React Native", "Firebase", "JavaScript"],
-    mockupImage: "/images/nova Expense.png",
-    websiteImage: "/images/nova Expense.png",
+    mockupImage: "/projects/mkns.png",
+    websiteImage: "/projects/ssns.png",
+    projectUrl: "https://github.com/joseagdiaz37/nova-expense.git",
   },
   "bitrix24-crm-automation": {
     title: "Bitrix24 CRM Automation",
-    description: "Custom automation workflows for Bitrix24 CRM. Automated lead management, email campaigns, task assignments, and reporting integrations.",
+    description: "Automatizaciones y desarrollos a medida sobre Bitrix24 CRM con fuerte uso de APIs, webhooks y software de integración para unificar captación de leads, clasificación automática y ejecución de procesos en herramientas internas y externas.",
     category: "Automation",
-    technologies: ["Bitrix24 API", "PHP", "JavaScript", "Webhooks"],
+    technologies: ["Bitrix24 API", "REST APIs", "PHP", "JavaScript", "Webhooks", "Make"],
     mockupImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&h=900&fit=crop",
     websiteImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&h=900&fit=crop",
+    caseStudy: {
+      subtitle: "Automatización de CRM y multicanal para captura y gestión de leads",
+      context: "La operación recibía leads desde agendas de citas, formularios web, WhatsApp y campañas de Meta/TikTok, con procesos manuales que generaban retrasos y errores.",
+      objective: "Centralizar entradas, calificar leads y automatizar procesos vía APIs y webhooks para acelerar la atención y reducir errores.",
+      stack: ["Bitrix24", "Bitrix24 REST API", "Webhooks", "Make (Integromat)", "WhatsApp", "Meta Ads", "TikTok Ads", "APIs internas", "Servidor propio"],
+      results: "Flujos automáticos para ingreso, validación y asignación de leads, con ejecución de webhooks, llamadas a APIs internas y sincronización de calendarios.",
+      impact: "Menos trabajo manual, respuestas más rápidas y consistencia en el embudo gracias al uso de software de integración y servicios API.",
+      flow: "Agenda/Formulario/WhatsApp/Ads → Bitrix24 (API) → Reglas/Validación → Webhooks → APIs internas/Make → Actualización de etapa",
+      highlights: [
+        "Ingreso automático de leads desde múltiples canales",
+        "Validación vía API en servidor propio para evitar duplicados y mover de etapa",
+        "Sincronización de calendarios con sistema de citas externo",
+        "Cotizador alimentado por listas de Bitrix y administrado en app embebida",
+        "Orquestación de procesos con software de automatización (Make) y webhooks",
+      ],
+      tools: [
+        { name: "Bitrix24", logo: "https://www.svgrepo.com/show/303348/bitrix24-logo.svg" },
+        { name: "Make", logo: "https://www.svgrepo.com/show/373502/make.svg" },
+        { name: "WhatsApp", logo: "https://www.svgrepo.com/show/475692/whatsapp-color.svg" },
+        { name: "Meta Ads", logo: "https://www.svgrepo.com/show/475639/meta.svg" },
+        { name: "TikTok", logo: "https://www.svgrepo.com/show/475664/tiktok-color.svg" },
+        { name: "Webhook", logo: "https://www.svgrepo.com/show/521925/link.svg" },
+        { name: "API", logo: "https://www.svgrepo.com/show/521680/api.svg" },
+        { name: "Postman", logo: "https://www.svgrepo.com/show/354202/postman-icon.svg" },
+        { name: "PHP", logo: "https://www.svgrepo.com/show/452088/php.svg" },
+        { name: "JavaScript", logo: "https://www.svgrepo.com/show/452045/js.svg" },
+        { name: "n8n", logo: "https://www.svgrepo.com/show/353446/n8n-icon.svg" },
+        { name: "Zapier", logo: "https://www.svgrepo.com/show/353777/zapier.svg" },
+        { name: "Google Sheets", logo: "https://www.svgrepo.com/show/452202/google-sheets.svg" },
+        { name: "Calendly", logo: "https://www.svgrepo.com/show/353449/calendly.svg" },
+      ],
+    },
   },
   "cotizador-de-cursos": {
     title: "Cotizador de Cursos",
     description: "Interactive course quotation system. Calculate course prices based on duration, location, and additional services with real-time updates.",
     category: "Web Software",
     technologies: ["JavaScript", "PHP", "MySQL", "React"],
-    mockupImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1400&h=900&fit=crop",
-    websiteImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1400&h=900&fit=crop",
+    mockupImage: "/projects/mkct.png",
+    websiteImage: "/projects/ssct.png",
+    projectUrl: "https://cotizador.globalconnection.ai/",
   },
   "solved-puzzle": {
     title: "Solved Puzzle",
     description: "Marketing agency website with portfolio showcase, service pages, client testimonials, and contact forms. Optimized for SEO and performance.",
     category: "Web Development",
     technologies: ["WordPress", "Shopify", "PHP", "JavaScript"],
-    mockupImage: "https://images.unsplash.com/photo-1557821552-17105176677c?w=1400&h=900&fit=crop",
-    websiteImage: "https://images.unsplash.com/photo-1557821552-17105176677c?w=1400&h=900&fit=crop",
+    mockupImage: "/projects/mksp.png",
+    websiteImage: "/projects/sssp.png",
+    projectUrl: "https://solvedpuzzle.com/",
   },
   "clinica-piedecuesta": {
     title: "Clínica Piedecuesta",
     description: "Medical clinic website with appointment booking, service information, doctor profiles, and patient portal. HIPAA compliant and secure.",
     category: "Web Development",
     technologies: ["WordPress", "PHP", "MySQL", "Booking System"],
-    mockupImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1400&h=900&fit=crop",
-    websiteImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1400&h=900&fit=crop",
+    mockupImage: "/projects/mkcp.png",
+    websiteImage: "/projects/sscp.png",
+    projectUrl: "https://clinicapiedecuestasa.com/",
   },
   "dimark-garage-doors": {
     title: "Dimark Garage Doors",
     description: "Business website for garage door installation and repair services. Features include service catalog, quote requests, before/after gallery, and customer reviews.",
     category: "Web Development",
     technologies: ["WordPress", "PHP", "JavaScript", "Contact Forms"],
-    mockupImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&h=900&fit=crop",
-    websiteImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&h=900&fit=crop",
+    mockupImage: "/projects/mkdg.png",
+    websiteImage: "/projects/ssdg.png",
+    projectUrl: "https://dimarkgaragedoors.com/",
   },
 };
 
@@ -204,6 +252,87 @@ export default function ProjectPage() {
           </div>
         </div>
       </section>
+
+      {project.caseStudy && (
+        <section className="pb-16 px-6">
+          <div className="container mx-auto max-w-6xl">
+            <div className="mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+                {project.caseStudy.subtitle}
+              </h2>
+              <div className="text-sm font-mono text-gray-500">Caso de estudio</div>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-10">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-cyan-400 font-mono text-sm mb-2">Contexto</h3>
+                  <p className="text-gray-400 leading-relaxed">{project.caseStudy.context}</p>
+                </div>
+                <div>
+                  <h3 className="text-cyan-400 font-mono text-sm mb-2">Objetivo</h3>
+                  <p className="text-gray-400 leading-relaxed">{project.caseStudy.objective}</p>
+                </div>
+                <div>
+                  <h3 className="text-cyan-400 font-mono text-sm mb-2">Stack</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.caseStudy.stack.map((item) => (
+                      <span key={item} className="text-xs font-mono text-gray-300 bg-gray-800/60 px-2 py-1 rounded">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-cyan-400 font-mono text-sm mb-2">Resultado</h3>
+                  <p className="text-gray-400 leading-relaxed">{project.caseStudy.results}</p>
+                </div>
+                <div>
+                  <h3 className="text-cyan-400 font-mono text-sm mb-2">Impacto</h3>
+                  <p className="text-gray-400 leading-relaxed">{project.caseStudy.impact}</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                {project.caseStudy.tools && (
+                  <div className="bg-[#0f0f0f] border border-gray-800 rounded-xl p-6">
+                    <h3 className="text-cyan-400 font-mono text-sm mb-3">Herramientas</h3>
+                    <div className="flex flex-wrap gap-4 items-center">
+                      {project.caseStudy.tools.map((tool) => (
+                        <div key={tool.name} className="flex items-center gap-2">
+                          <img
+                            src={tool.logo}
+                            alt={tool.name}
+                            className="w-6 h-6 object-contain"
+                          />
+                          <span className="text-xs font-mono text-gray-300">{tool.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                <div className="bg-[#0f0f0f] border border-gray-800 rounded-xl p-6">
+                  <h3 className="text-cyan-400 font-mono text-sm mb-3">Diagrama de flujo</h3>
+                  <p className="text-gray-300 font-mono text-sm leading-relaxed">
+                    {project.caseStudy.flow}
+                  </p>
+                </div>
+                <div className="bg-[#0f0f0f] border border-gray-800 rounded-xl p-6">
+                  <h3 className="text-cyan-400 font-mono text-sm mb-3">Highlights</h3>
+                  <ul className="space-y-3 text-gray-400">
+                    {project.caseStudy.highlights.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="text-cyan-400">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Mockup Image */}
       <section className="py-16 px-6">
