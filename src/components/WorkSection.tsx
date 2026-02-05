@@ -10,7 +10,7 @@ const projects = [
     category: "Web Development",
     categorySlug: "web-dev",
     slug: "global-connection",
-    image: "public/projects/mkgc.png",
+    image: "/projects/mkgc.png",
     size: "third",
   },
   {
