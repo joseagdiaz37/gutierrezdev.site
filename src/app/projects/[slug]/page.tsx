@@ -11,6 +11,7 @@ const projectsData: Record<string, {
   technologies: string[];
   mockupImage: string;
   websiteImage: string;
+  projectUrl?: string;
 }> = {
   "global-connection": {
     title: "Global Connection",
@@ -18,7 +19,8 @@ const projectsData: Record<string, {
     category: "Web Development",
     technologies: ["WordPress", "PHP", "CRM", "Google Analytics", "Tag Manager"],
     mockupImage: "/projects/mkgc.png",
-    websiteImage: "/projects/mkgc.png",
+    websiteImage: "/projects/gcss-1.png",
+    projectUrl: "https://www.globalconnection.com.co/",
   },
   "estudie-en-el-exterior": {
     title: "Estudie en el Exterior",
@@ -187,7 +189,9 @@ export default function ProjectPage() {
             
             <div className="flex justify-end">
               <a
-                href="#"
+                href={project.projectUrl ?? "#"}
+                target={project.projectUrl ? "_blank" : undefined}
+                rel={project.projectUrl ? "noopener noreferrer" : undefined}
                 className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-mono text-sm transition-colors"
               >
                 Open Project
