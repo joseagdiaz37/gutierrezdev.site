@@ -9,9 +9,22 @@ const categoryLabels = {
   "mobile-app": { en: "Mobile App", es: "Aplicación móvil" },
   "web-software": { en: "Web Software", es: "Software web" },
   automation: { en: "Automation", es: "Automatización" },
+} as const;
+
+type CategorySlug = keyof typeof categoryLabels;
+
+type Project = {
+  id: number;
+  title: string;
+  categorySlug: CategorySlug;
+  slug: string;
+  image: string;
+  size: "third" | "two-thirds";
+  featured?: boolean;
+  description?: { en: string; es: string };
 };
 
-const projects = [
+const projects: Project[] = [
   {
     id: 1,
     title: "Global Connection",
@@ -83,7 +96,7 @@ const projects = [
   },
 ];
 
-const filters = [
+const filters: Array<{ slug: "all" | CategorySlug; count: number; label: { en: string; es: string } }> = [
   { slug: "all", count: 8, label: { en: "All", es: "Todos" } },
   { slug: "web-dev", count: 4, label: categoryLabels["web-dev"] },
   { slug: "mobile-app", count: 1, label: categoryLabels["mobile-app"] },
@@ -92,7 +105,7 @@ const filters = [
 ];
 
 export default function WorkSection() {
-  const [activeFilter, setActiveFilter] = useState("all");
+  const [activeFilter, setActiveFilter] = useState<"all" | CategorySlug>("all");
   const { language } = useLanguage();
 
   const filteredProjects =
