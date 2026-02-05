@@ -17,8 +17,8 @@ const projectsData: Record<string, {
     description: "Complete website development and maintenance for Global Connection. Implementation of full-stack solutions, CRM integrations, social media campaigns, and network configurations with Google Tag Manager, Search Console and Analytics.",
     category: "Web Development",
     technologies: ["WordPress", "PHP", "CRM", "Google Analytics", "Tag Manager"],
-    mockupImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&h=900&fit=crop",
-    websiteImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&h=900&fit=crop",
+    mockupImage: "public/projects/mkgc.png",
+    websiteImage: "public/projects/mkgc.png",
   },
   "estudie-en-el-exterior": {
     title: "Estudie en el Exterior",
