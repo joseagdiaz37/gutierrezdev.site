@@ -3,6 +3,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const socialLinks = [
+  { name: "WhatsApp", href: "https://wa.me/573196253079" },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/joseagdiaz/" },
   { name: "Github", href: "https://github.com/joseagdiaz37" },
   { name: "Email", href: "mailto:jose@gutierrezdev.site" },

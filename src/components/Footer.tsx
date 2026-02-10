@@ -30,16 +30,6 @@ export default function Footer() {
       </button>
 
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-center gap-4 mb-4 text-sm font-mono">
-          <a
-            href="https://wa.me/573196253079"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors"
-          >
-            WhatsApp
-          </a>
-        </div>
         <p className="text-gray-500 text-sm text-center">
           {language === "es"
             ? `${new Date().getFullYear()}. Hecho con pasión por José Gutiérrez. Todos los derechos reservados.`

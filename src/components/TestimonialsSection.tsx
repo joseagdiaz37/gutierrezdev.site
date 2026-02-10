@@ -15,6 +15,7 @@ const testimonials = [
       es: "Directora de marketing",
     },
     image: "/projects/leidyr.jpg",
+    imageClass: "object-cover object-top scale-110",
     bgClass: "bg-gradient-turquoise",
   },
   {
@@ -29,6 +30,7 @@ const testimonials = [
       es: "Community manager y desarrollador de WordPress y SEO",
     },
     image: "/projects/danief.jpeg",
+    imageClass: "object-cover object-center scale-125",
     bgClass: "bg-gradient-blue",
   },
   {
@@ -43,6 +45,7 @@ const testimonials = [
       es: "Diseñadora y community manager",
     },
     image: "/projects/camilah.jpg",
+    imageClass: "object-cover object-top scale-110",
     bgClass: "bg-gradient-purple",
   },
 ];
@@ -58,11 +61,11 @@ export default function TestimonialsSection() {
           <div
             className={`${testimonials[0].bgClass} p-8 rounded-lg relative`}
           >
-            <div className="absolute top-6 right-6 w-16 h-16 rounded-full overflow-hidden border-2 border-white/20 bg-white/10">
+            <div className="absolute top-6 right-6 w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
               <img
                 src={testimonials[0].image}
                 alt={testimonials[0].author}
-                className="w-full h-full object-contain p-1"
+                className={`w-full h-full ${testimonials[0].imageClass} transform`}
               />
             </div>
             <div className="text-4xl text-white/30 mb-4">&rdquo;&rdquo;</div>
@@ -84,11 +87,11 @@ export default function TestimonialsSection() {
                 key={testimonial.id}
                 className={`${testimonial.bgClass} p-8 rounded-lg relative`}
               >
-                <div className="absolute top-6 right-6 w-14 h-14 rounded-full overflow-hidden border-2 border-white/20 bg-white/10">
+                <div className="absolute top-6 right-6 w-14 h-14 rounded-full overflow-hidden border-2 border-white/20">
                   <img
                     src={testimonial.image}
                     alt={testimonial.author}
-                    className="w-full h-full object-contain p-1"
+                    className={`w-full h-full ${testimonial.imageClass} transform`}
                   />
                 </div>
                 <div className="text-3xl text-white/30 mb-3">&rdquo;&rdquo;</div>
