@@ -10,26 +10,15 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const experiencesEn = [
   {
-    id: "1",
-    title: "Web Administrator and Systems Support",
-    company: "Asfalart",
-    period: "2015 - 2017",
-    location: "Bucaramanga - Colombia",
-    website: "www.asfalart.co",
+    id: "4",
+    title: "Webmaster - Web Developer - UX/UI Designer",
+    company: "Global Connection",
+    period: "2022 - Present",
+    location: "Bogotá - Colombia (Hybrid)",
+    website: "globalconnection.com.co",
     description:
-      "I was in charge of the administration of the company's website and areas of the systems department such as software management and CRM.",
-    skills: ["Web Admin", "CRM", "Systems Support"],
-  },
-  {
-    id: "2",
-    title: "Web Administrator, Designer and Audiovisual Creative",
-    company: "Valdivision",
-    period: "2017 - 2018",
-    location: "Bucaramanga - Colombia",
-    website: "valdivision.com",
-    description:
-      "I was in charge of managing and administering the company's website, designing graphic elements, editing video and photography. Also, I covered private corporate events and photography and video.",
-    skills: ["Web Design", "Video Editing", "Photography", "Corporate Events"],
+      "I am in charge of the development and implementation of full-stack solutions, working with automations, CRM integrations, social media campaigns, and network configurations with Google Tag Manager, Search Console and Analytics.",
+    skills: ["Full-Stack", "CRM", "Automations", "Social Media", "Google Tools", "SEO"],
   },
   {
     id: "3",
@@ -43,40 +32,40 @@ const experiencesEn = [
     skills: ["WordPress", "Shopify", "Automations", "Scripts", "Lead Management"],
   },
   {
-    id: "4",
-    title: "Webmaster - Web Developer - UX/UI Designer",
-    company: "Global Connection",
-    period: "2022 - Present",
-    location: "Bogotá - Colombia (Hybrid)",
-    website: "globalconnection.com.co",
-    description:
-      "I am in charge of the development and implementation of full-stack solutions, working with automations, CRM integrations, social media campaigns, and network configurations with Google Tag Manager, Search Console and Analytics.",
-    skills: ["Full-Stack", "CRM", "Automations", "Social Media", "Google Tools", "SEO"],
-  },
-];
-
-const experiencesEs = [
-  {
-    id: "1",
-    title: "Administrador web y soporte de sistemas",
-    company: "Asfalart",
-    period: "2015 - 2017",
-    location: "Bucaramanga - Colombia",
-    website: "www.asfalart.co",
-    description:
-      "Estuve a cargo de la administración del sitio web y áreas del departamento de sistemas como gestión de software y CRM.",
-    skills: ["Administración web", "CRM", "Soporte de sistemas"],
-  },
-  {
     id: "2",
-    title: "Administrador web, diseñador y creativo audiovisual",
+    title: "Web Administrator, Designer and Audiovisual Creative",
     company: "Valdivision",
     period: "2017 - 2018",
     location: "Bucaramanga - Colombia",
     website: "valdivision.com",
     description:
-      "Gestioné y administré el sitio web, diseñé piezas gráficas y edité video y fotografía. También cubrí eventos corporativos privados con foto y video.",
-    skills: ["Diseño web", "Edición de video", "Fotografía", "Eventos corporativos"],
+      "I was in charge of managing and administering the company's website, designing graphic elements, editing video and photography. Also, I covered private corporate events and photography and video.",
+    skills: ["Web Design", "Video Editing", "Photography", "Corporate Events"],
+  },
+  {
+    id: "1",
+    title: "Web Administrator and Systems Support",
+    company: "Asfalart",
+    period: "2015 - 2017",
+    location: "Bucaramanga - Colombia",
+    website: "www.asfalart.co",
+    description:
+      "I was in charge of the administration of the company's website and areas of the systems department such as software management and CRM.",
+    skills: ["Web Admin", "CRM", "Systems Support"],
+  },
+];
+
+const experiencesEs = [
+  {
+    id: "4",
+    title: "Webmaster - Desarrollador web - UX/UI Designer",
+    company: "Global Connection",
+    period: "2022 - Presente",
+    location: "Bogotá - Colombia (Híbrido)",
+    website: "globalconnection.com.co",
+    description:
+      "Desarrollo e implementación de soluciones full-stack, integraciones CRM, automatizaciones, campañas en redes y configuraciones con Tag Manager, Search Console y Analytics.",
+    skills: ["Full-Stack", "CRM", "Automatizaciones", "Social Media", "Google Tools", "SEO"],
   },
   {
     id: "3",
@@ -90,15 +79,26 @@ const experiencesEs = [
     skills: ["WordPress", "Shopify", "Automatizaciones", "Scripts", "Gestión de leads"],
   },
   {
-    id: "4",
-    title: "Webmaster - Desarrollador web - UX/UI Designer",
-    company: "Global Connection",
-    period: "2022 - Presente",
-    location: "Bogotá - Colombia (Híbrido)",
-    website: "globalconnection.com.co",
+    id: "2",
+    title: "Administrador web, diseñador y creativo audiovisual",
+    company: "Valdivision",
+    period: "2017 - 2018",
+    location: "Bucaramanga - Colombia",
+    website: "valdivision.com",
     description:
-      "Desarrollo e implementación de soluciones full-stack, integraciones CRM, automatizaciones, campañas en redes y configuraciones con Tag Manager, Search Console y Analytics.",
-    skills: ["Full-Stack", "CRM", "Automatizaciones", "Social Media", "Google Tools", "SEO"],
+      "Gestioné y administré el sitio web, diseñé piezas gráficas y edité video y fotografía. También cubrí eventos corporativos privados con foto y video.",
+    skills: ["Diseño web", "Edición de video", "Fotografía", "Eventos corporativos"],
+  },
+  {
+    id: "1",
+    title: "Administrador web y soporte de sistemas",
+    company: "Asfalart",
+    period: "2015 - 2017",
+    location: "Bucaramanga - Colombia",
+    website: "www.asfalart.co",
+    description:
+      "Estuve a cargo de la administración del sitio web y áreas del departamento de sistemas como gestión de software y CRM.",
+    skills: ["Administración web", "CRM", "Soporte de sistemas"],
   },
 ];
 

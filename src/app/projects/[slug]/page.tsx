@@ -297,16 +297,14 @@ export default function ProjectPage() {
                 {project.caseStudy.tools && (
                   <div className="bg-[#0f0f0f] border border-gray-800 rounded-xl p-6">
                     <h3 className="text-cyan-400 font-mono text-sm mb-3">Herramientas</h3>
-                    <div className="flex flex-wrap gap-4 items-center">
+                    <div className="flex flex-wrap gap-2">
                       {project.caseStudy.tools.map((tool) => (
-                        <div key={tool.name} className="flex items-center gap-2">
-                          <img
-                            src={tool.logo}
-                            alt={tool.name}
-                            className="w-6 h-6 object-contain"
-                          />
-                          <span className="text-xs font-mono text-gray-300">{tool.name}</span>
-                        </div>
+                        <span
+                          key={tool.name}
+                          className="text-xs font-mono text-gray-300 bg-gray-800/60 px-2 py-1 rounded"
+                        >
+                          {tool.name}
+                        </span>
                       ))}
                     </div>
                   </div>
