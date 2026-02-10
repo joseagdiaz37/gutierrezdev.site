@@ -14,21 +14,21 @@ const testimonials = [
       en: "Marketing Director",
       es: "Directora de marketing",
     },
-    image: "/projects/leidyr.png",
+    image: "/projects/leidyr.jpg",
     bgClass: "bg-gradient-turquoise",
   },
   {
     id: 2,
     quote: {
-      en: "José is a complete professional: he solved complex integrations, optimized WordPress workflows and delivered everything ready to scale. His support and technical clarity made the work smooth.",
-      es: "José es un profesional completo: resolvió integraciones complejas, optimizó flujos en WordPress y dejó cada entrega lista para escalar. Su soporte y claridad técnica hicieron el trabajo muy fluido.",
+      en: "José is a highly resourceful person: he can tackle problems of any level of difficulty and find clear and effective solutions. He excels at organization when diagnosing, executing, and monitoring each process, which allows him to optimize time and results. Furthermore, he has a great capacity for time management and creating strategies in short timeframes, achieving truly remarkable results. His ability to adapt to new trends ensures that projects and companies remain up-to-date and at the forefront.",
+      es: "José es una persona muy resolutiva: puede enfrentarse a problemas de cualquier nivel de dificultad y encontrar soluciones claras y efectivas. Se destaca por su organización al momento de diagnosticar, ejecutar y hacer seguimiento a cada proceso, lo que permite optimizar tiempos y resultados. Además, tiene una gran capacidad para gestionar su tiempo y crear estrategias en plazos cortos, logrando resultados realmente notables. Su facilidad para adaptarse a nuevas tendencias hace que los proyectos y las empresas se mantengan actualizados y a la vanguardia.",
     },
     author: "Daniel Figueredo",
     role: {
       en: "Community manager & WordPress/SEO developer",
       es: "Community manager y desarrollador de WordPress y SEO",
     },
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+    image: "/projects/danief.jpeg",
     bgClass: "bg-gradient-blue",
   },
   {
@@ -42,7 +42,7 @@ const testimonials = [
       en: "Designer & community manager",
       es: "Diseñadora y community manager",
     },
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
+    image: "/projects/camilah.jpg",
     bgClass: "bg-gradient-purple",
   },
 ];
@@ -58,11 +58,11 @@ export default function TestimonialsSection() {
           <div
             className={`${testimonials[0].bgClass} p-8 rounded-lg relative`}
           >
-            <div className="absolute top-6 right-6 w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
+            <div className="absolute top-6 right-6 w-16 h-16 rounded-full overflow-hidden border-2 border-white/20 bg-white/10">
               <img
                 src={testimonials[0].image}
                 alt={testimonials[0].author}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain p-1"
               />
             </div>
             <div className="text-4xl text-white/30 mb-4">&rdquo;&rdquo;</div>
@@ -84,11 +84,11 @@ export default function TestimonialsSection() {
                 key={testimonial.id}
                 className={`${testimonial.bgClass} p-8 rounded-lg relative`}
               >
-                <div className="absolute top-6 right-6 w-14 h-14 rounded-full overflow-hidden border-2 border-white/20">
+                <div className="absolute top-6 right-6 w-14 h-14 rounded-full overflow-hidden border-2 border-white/20 bg-white/10">
                   <img
                     src={testimonial.image}
                     alt={testimonial.author}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain p-1"
                   />
                 </div>
                 <div className="text-3xl text-white/30 mb-3">&rdquo;&rdquo;</div>
