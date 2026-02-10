@@ -6,7 +6,7 @@ const testimonials = [
   {
     id: 1,
     quote: {
-      en: "José transformed our digital process with a strategic and highly technical approach. He designed solutions that integrated campaigns, CRM and automations seamlessly, improving response times and the quality of follow‑ups for every lead. His ability to translate marketing goals into measurable, functional systems was key to scaling our results. He was always proactive, organized and focused on real business impact.",
+      en: "Jose provided valuable support during our collaboration in his role as webmaster. He made significant contributions in automation, web design, and process optimization, consistently delivering high-quality and well-structured work. His professionalism, technical expertise, and commitment were evident throughout our work together, and I confidently recommend him for roles requiring strong technical and process-driven skills.",
       es: "José transformó nuestro proceso digital con una visión estratégica y técnica impecable. Diseñó soluciones que integraron campañas, CRM y automatizaciones sin fricción, mejorando los tiempos de respuesta del equipo y la calidad del seguimiento a cada lead. Su capacidad para traducir objetivos de marketing en sistemas funcionales y medibles fue clave para escalar nuestros resultados. Siempre fue proactivo, ordenado y comprometido con el impacto real en el negocio.",
     },
     author: "Leidy Rodríguez",
@@ -14,7 +14,7 @@ const testimonials = [
       en: "Marketing Director",
       es: "Directora de marketing",
     },
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
+    image: "/projects/leidyr.png",
     bgClass: "bg-gradient-turquoise",
   },
   {
