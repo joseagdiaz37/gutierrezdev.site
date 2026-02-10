@@ -128,12 +128,12 @@ export default function WorkSection() {
             </h2>
             <p className="font-mono text-gray-400 max-w-md leading-relaxed text-sm md:text-base">
               {language === "es"
-                ? "He desarrollado aplicaciones web y móviles escalables para viajes, eventos y telemedicina usando React SPA y PWA."
-                : "Deployed scalable travel, event and telemedicine web and hybrid mobile apps using React SPA and PWA."}
+                ? "He desarrollado aplicaciones web y móviles escalables para viajes, eventos y educación usando React SPA y PWA."
+                : "Deployed scalable travel, event and education web and hybrid mobile apps using React SPA and PWA."}
               <br /><br />
               {language === "es"
-                ? "He colaborado en 140+ proyectos con 50+ clientes alrededor del mundo. También me interesan los datos y la visualización."
-                : "Collaborated in 140+ projects with 50+ clients all around the world. I am also interested in data analytics and visualization."}
+                ? "He colaborado en 80+ proyectos con 20+ clientes alrededor del mundo. También me interesan los datos y la visualización."
+                : "Collaborated in 80+ projects with 20+ clients all around the world. I am also interested in data analytics and visualization."}
             </p>
           </div>
 
